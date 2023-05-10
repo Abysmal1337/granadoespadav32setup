@@ -21,8 +21,8 @@ Memory cleaner if your on 32 gb ram machine - https://www.koshyjohn.com/software
  LAVAL AND DRAKEN UPDATE FIRST - https://drive.google.com/file/d/1lArcS7b1t_ydW1FHYj2PlVnyWylAAkZy/view?usp=sharing
  ----
 MERIEL UPDATE SCRIPT AND DATATABLES ONLY - https://drive.google.com/file/d/1UHUdwEJ2AMSjfXS0M9KCaiWTAaaCm2PK/view?usp=share_link
-
-
+------ 
+TERRA GE CLIENT MERIEL UPDATE 5/8/23 - https://drive.google.com/file/d/1VvuwthQQ7OBJbJXnWFryToAQgwTVr1mC/view?usp=sharing
 
 
 *HARDWARE REQUIREMENTS*
@@ -55,8 +55,8 @@ extract all ipf files (ies/xml/shared/dictionary) from client and copy them into
 and make a backup before you do that .
 
 -------------------
+*adding characters * (IF DONT WANT TO ADD MANUALLY CHECK THE NEXT GUIDE EASY SETUP) -- 
 
-*adding characters *
 YOU will need ge_tools and the mkpatch for this part this guide is not 100% finished will be updated in more thorough explaination in v32 dev discord! 
 I suggest you join!
 ----------------------
@@ -82,6 +82,15 @@ datatable_     --- within the xml_export
 
 -----------------------------------------
 
+
+*EASY SETUP*
+IF YOU ARE NOT INTERESTED IN EXTRACTING THE FILES AND EDITING THEM MANUALLY 
+YOU CAN DOWNLOAD THE TERRA GE FILES ABOVE IN THE UPDATE DOWNLOADS .
+THEN JUST EXTRACT AND REPLACE THEM ORIGINAL SERVER GE FOLDER AND DOWNLOAD THE MAY 8TH 2023 CLIENT IVE SHARED TO START PLAYING LOCALLY.
+
+YOU CAN FIND A VIDEO GUIDE HERE!
+
+------------------------------
 ** Delete Items from inventory in DB ** 
 Go Navicat/MSQL 
 into GE_DATA - dbo - tables - ITEM 
