@@ -33,6 +33,7 @@ GPU is not required but reccomended any gtx 1xxx - rtx 4xxx series i recomend fo
 ram - reccomended should be 64 gb -128gb ram for smooth operations.
 
 
+
 	(*Instructions*) 
 First thing update your windows language settings for the release folder to function right 
 in language and region settings change the "regional format" setting language to Chinese Simplified! 
@@ -53,6 +54,17 @@ chinese name version shortcuts of node and hub + working manager client= (tools)
 connect with private ge_client andromida/hell_ge/newera/terra - official client doesnt work. 
 extract all ipf files (ies/xml/shared/dictionary) from client and copy them into your servers ge folder 
 and make a backup before you do that .
+
+-------------------
+
+*EASY SETUP*
+IF YOU ARE NOT INTERESTED IN EXTRACTING THE FILES AND EDITING THEM MANUALLY 
+YOU CAN DOWNLOAD THE TERRA GE FILES ABOVE IN THE UPDATE DOWNLOADS .
+THEN JUST EXTRACT AND REPLACE THEM ORIGINAL SERVER GE FOLDER AND DOWNLOAD THE MAY 8TH 2023 CLIENT IVE SHARED TO START PLAYING LOCALLY.
+
+YOU CAN FIND A VIDEO GUIDE HERE! - https://www.youtube.com/watch?v=X8u8r2gNzSM
+
+------------------------------
 
 -------------------
 *adding characters * (IF DONT WANT TO ADD MANUALLY CHECK THE NEXT GUIDE EASY SETUP) -- 
@@ -80,17 +92,7 @@ you need to edit script like common_monster with in script/monster
 all important datatables files under name such as 
 datatable_     --- within the xml_export
 
------------------------------------------
 
-
-*EASY SETUP*
-IF YOU ARE NOT INTERESTED IN EXTRACTING THE FILES AND EDITING THEM MANUALLY 
-YOU CAN DOWNLOAD THE TERRA GE FILES ABOVE IN THE UPDATE DOWNLOADS .
-THEN JUST EXTRACT AND REPLACE THEM ORIGINAL SERVER GE FOLDER AND DOWNLOAD THE MAY 8TH 2023 CLIENT IVE SHARED TO START PLAYING LOCALLY.
-
-YOU CAN FIND A VIDEO GUIDE HERE!
-
-------------------------------
 ** Delete Items from inventory in DB ** 
 Go Navicat/MSQL 
 into GE_DATA - dbo - tables - ITEM 
@@ -99,13 +101,39 @@ DATATABLE_ITEM - WHICH EVER TABLE IT IS FROM IN XML_EXPORT
 
 If in need of anymore guide please join our v32 developer discord for regular updates on this topic and to share your knowledge <3 !
 Discord LINK - https://discord.gg/zeYzb6kc
+-----------------------------------------
+*EDIT GM COMMANDS*
 
+WITHIN THE FOLDER  
+C: ge_server\ge\xml_export\
+edit - datatable_cheatlist.xml
+----------------------------------------------
 
+--------------------------
 
+	*ADDING STANCE(s)*
+	Update these files 
+	datatable_stance / datatable_stancecondition 
+	datatable_skill /datatable_buff 
+	-------------- 	--------	--------	-------------	-----  dictionary_local for descriptions 
+		if buffs program in func in buff.scp and/or common_monster.scp/ common_pc.scp / extraskill.scp 
 
+---------------------
+*HOW TO ADD WEAPON TO CUSTOM CHAR* / CHANGE 
 
+Characters have specific bone annotations on them
+some characters have additional annotations to support specific weapons like kess with Heavy Rifle
+If you want to make Heavy Rifle appear in a character that doesnt natively support the weapon type
+then look into datatable_item_weapon.xml
+then for all HeavyRifle type weapons, go on the R_DUMMY column and replace bip01 prop1 with DUMMY_R_HAND_RIFLE
+
+This will make the weapon appear for every character that supports the DUMMY_R_HAND_RIFLE
+you can also opt to change it to R_HAND but it will appear in the wrong angle and will look funny lol
+
+-----------------------------------------
 
 --------------------------------------------------------------------
+
 ** Extra Guides **
    ------------    
 ** GM Commands **
@@ -152,6 +180,29 @@ Create 5000 item number 238."
 
 
 
+
+--------------------------
+NPC Creation tutorial:
+Things needed
++ NPC you want to create
++ NPC's purpose/script
++ NPC's class_type in datatable_NPC
+
+1. Create script somewhere in src/script/whateverfoldername
+This is to keep yourself organized. I put all of my custom scripts into my own folder inside scripts, it doesn't even need to be about npc. could be mission item scripts etc. They all don't have to be in their respective folders.
+
+2. Copy my script.
+https://i.imgur.com/NEpJy1x.png
+You can replace whatever you want.
+
+3. Place NPC in a map you want.
+The NPC can be in reb_basic. To see where you want the npc to be do /where and copy the coordinates onto the xml.
+npcgen_reb_basic.xml
+
+Script="NPC_TEST_SCRIPT"
+ClassType="arm_judith_black" (or any npc you'd like.)
+
+4. Done!
 ---------
 Setup global connectivity from home connection 
 use Wan IP  on only Server1_IP
@@ -394,6 +445,50 @@ composite steel 21601 ,  cast iron 21602
 
 
 --------------------------
+
+* add characters guide *
+
+first
+
+on the client side
+ 
+what you need is
+ 
+job, npclist, skill, stance, stancecondition
+ 
+this is basic
+ 
+Other items, artifacts, etc. required for the character must be additionally worked on.
+ 
+In addition, because of the texture suitable for the character and the image of the bullet in the case of a long-distance character, xml.ipf, animation,
+ 
+effect
+ 
+Scripts must be written for the implementation of skills for each character.
+ 
+Script for skill implementation
+buff/attack/extraskill/coroutineskill/common_monster/common_pc/get_status_pc
+ 
+Besides, each character is slightly different.
+ 
+Script needs work
+ 
+Additional client UI
+Skill icon, ui internal buff tooltip, img, etc.
+ 
+You need to work on images.
+
+
+Add a dictionary accordingly
+
+On the server side, create job, npclist, skill, stance, stancecondition + buff ies file
+
+Script and you're done
+
+
+
+
+------------------------------
 
 
 
