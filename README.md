@@ -119,7 +119,7 @@ edit - datatable_cheatlist.xml
 		if buffs program in func in buff.scp and/or common_monster.scp/ common_pc.scp / extraskill.scp 
 
 ---------------------
-*HOW TO ADD WEAPON TO CUSTOM CHAR* / CHANGE 
+*HOW TO ADD WEAPON TO CUSTOM CHAR* / CHANGE (CREDITS - HANSUKE) 
 
 Characters have specific bone annotations on them
 some characters have additional annotations to support specific weapons like kess with Heavy Rifle
