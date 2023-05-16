@@ -12,7 +12,7 @@ if you need any help come join the v32 developer discord everyone can help eacho
 DEVELOPER Discord LINK - https://discord.gg/zeYzb6kc
 
 ** DOWNLOADS **
-microsoft sql (if you dont have it yet) - https://www.microsoft.com/en-us/download/details.aspx?id=8109 
+microsoft sql (if you dont have it yet) - [https://www.microsoft.com/en-us/download/details.aspx?id=8109 ](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 GE_Server ge and release folder - https://drive.google.com/file/d/1rY9p5YS1Z2pOHdmgU49CmcZCWbETdIho/view?usp=sharing
 GE V32 SQL backup - https://drive.google.com/file/d/13h4dJpu8Lu7yKlxs7UNBi6Ps8R14OzeN/view?usp=sharing
 Memory cleaner if your on 32 gb ram machine - https://www.koshyjohn.com/software/memclean/
