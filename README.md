@@ -12,7 +12,7 @@ if you need any help come join the v32 developer discord everyone can help eacho
 DEVELOPER Discord LINK - https://discord.gg/zeYzb6kc
 
 ** DOWNLOADS **
-microsoft sql (if you dont have it yet) - [https://www.microsoft.com/en-us/download/details.aspx?id=8109 ](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+microsoft sql (if you dont have it yet) - https://www.microsoft.com/en-us/download/details.aspx?id=8109 
 GE_Server ge and release folder - https://drive.google.com/file/d/1rY9p5YS1Z2pOHdmgU49CmcZCWbETdIho/view?usp=sharing
 GE V32 SQL backup - https://drive.google.com/file/d/13h4dJpu8Lu7yKlxs7UNBi6Ps8R14OzeN/view?usp=sharing
 Memory cleaner if your on 32 gb ram machine - https://www.koshyjohn.com/software/memclean/
@@ -56,6 +56,13 @@ extract all ipf files (ies/xml/shared/dictionary) from client and copy them into
 and make a backup before you do that .
 
 -------------------
+*FIX DATABASE ERRORS*
+-------------------
+step 1: resource db account_info class == 0
+
+THEN RUN SQLQUERY 25-26-27
+------------------------------------------------
+________________________________________________
 
 *EASY SETUP*
 IF YOU ARE NOT INTERESTED IN EXTRACTING THE FILES AND EDITING THEM MANUALLY 
@@ -81,6 +88,17 @@ datatable_item_etc for char card
 add the character card here
 and then go to editing buffs for last portion
 
+client side
+
+animation => skill,character animation.
+effect => skill effect
+item_xxx => weapon cos, cos 
+texture_xxx => texture.
+dictionary => text.
+ies => actual data
+ui => image
+xml => if range/magic type character need shot img.
+
 open C: ge_server\ge\xml_export
 
 **editing buffs **
@@ -92,7 +110,88 @@ you need to edit script like common_monster with in script/monster
 all important datatables files under name such as 
 datatable_     --- within the xml_export
 
+**LIST OF BUFF TYPE POINTERS** CREDITS AITHUS
+The list I could put together:
+buff = {
+  --Apply time of use (ms)
+    ApplyTime = 0,
+  --Agility (int)
+    AGI_BM = 0,
+  --Attack rating (int)
+    AR_BM = 0,
+  --Attack speed (%)??
+    ASPD_BM = 0,
+  --Attack (%)
+    ATK_BM = 0,
+  --Constitution/HP (int)
+    CON_BM = 0,
+  --Critical (int)
+    CRT_BM = 0,
+  --Defence (int)
+    DEF_BM = 0,
+  --Dexterity (int)
+    DEX_BM = 0,
+  --Physical Penetration (int)
+    DefIP_BM = 0,
+  --Unknown - decrease HP continuous
+    DOT_BM = 0,
+  --Defence Rating (int)
+    DR_BM = 0,
+  --Fire Penetration (int)
+    FireIP_BM = 0,
+  --Ice Penetration (int)
+    IceIP_BM = 0,
+    IH_BM = 0,
+  --Immunity (int)
+    IMP_BM = 0,
+  --Accuracy (int)
+    IntenIP_BM = 0,
+  --Lightning Penetration (int)
+    LgtIP_BM = 0,
+  --Max HP increase (int)
+    MHP_BM = 0,
+  --Attack on monster (%)
+    MSATK_BM = 0,
+  --Movement Speed (%)
+    MSPD_BM = 0,
+  --Psyhic Penetration (int)
+    PsyIP_BM = 0,
+  --Regenerate HP (int)
+    RHP_BM = 0,
+  --Regenerate SP (int)
+    RSP_BM = 0,
+  --Resistance to Psyhic (int)
+    RPSY_BM = 0,
+  --Resistance to Status effect (int)
+    RSTAT_BM = 0,
+  --Resistance to Fire (int)
+    RFIRE_BM = 0,
+  --Resistance to Ice (int)
+    RICE_BM = 0,
+  --Resistance to Lightning (int)
+    RLGHT_BM = 0,
+  --Sprint(Move speed 50) (int)
+    Sprint_BM = 0,
+  --Strenght (int)
+    STR_BM = 0,
+}
+--------------------------------------
 
+-----------------------------------------------
+FOR ADDING A NEW PET **
+MAKE SURE TO EDIT THE FILE(S) IN THIS FOLDER 
+C:\ge_server\ge\script_export\monster
+
+mon_tactics_pet.scp
+
+
+and add buff to buff.scp in script_export\buff folder 
+
+
+
+--------------------------------------
+
+-----------------------------------------------
 ** Delete Items from inventory in DB ** 
 Go Navicat/MSQL 
 into GE_DATA - dbo - tables - ITEM 
@@ -111,14 +210,21 @@ edit - datatable_cheatlist.xml
 
 --------------------------
 
-	*ADDING STANCE(s)*
-	Update these files 
-	datatable_stance / datatable_stancecondition 
-	datatable_skill /datatable_buff 
-	-------------- 	--------	--------	-------------	-----  dictionary_local for descriptions 
-		if buffs program in func in buff.scp and/or common_monster.scp/ common_pc.scp / extraskill.scp 
+    ADDING STANCE(s)
+    Update these files 
+    datatable_stance / datatable_stancecondition 
+    datatable_skill /datatable_buff 
+    datatable_item_scroll add to datatable_usescroll
+    take updated xml ies folder files convert into ies files into ies folder within c:/ge_server/ge
+                                                    -then convert into ies.ipf and put with in client ge folder 
 
----------------------
+    --------------     --------    --------    -------------    -----  
+	dictionary_local for descriptions 
+		THEN ONCE THEY HAVE BEEN ADDED THERE MAKE SURE ALSO THEY HAVE BEEN LINKED TO DATATABLES RESPECTIVELY TO PROPER PLACES
+			THEN CONVERT IT INTO DICTIONARY.IPF AND PUT WITH IN THE GE CLIENT / GE FOLDER
+----------------------------
+
+        if buffs program in func in buff.scp and/or common_monster.scp/ common_pc.scp / extraskill.scp 
 *HOW TO ADD WEAPON TO CUSTOM CHAR* / CHANGE (CREDITS - HANSUKE) 
 
 Characters have specific bone annotations on them
@@ -133,7 +239,26 @@ you can also opt to change it to R_HAND but it will appear in the wrong angle an
 -----------------------------------------
 
 --------------------------------------------------------------------
+CHANGE VARIOUS CASH ITEMS LIKE TERRA COIN . PACKAGES. ETC
+--------
+WITHIN C: ge_server\ge\xml_export\datatable_itemcharge.xml
+find the name of the item within dictionary_local.xml
+copy the $numbers xxxxxx
+and ctrl+f to search within the datatable
 
+
+--------------------------------------------------------------------
+
+-----------------------------------------
+
+** Start ANY Missions as GM **
+CTRL + M Mission - 
+Type in mission name and press lobby
+to allow others to join invite them to your squad
+and then use command 
+//callcom "family name"
+
+-----------------------------
 ** Extra Guides **
    ------------    
 ** GM Commands **
@@ -203,6 +328,31 @@ Script="NPC_TEST_SCRIPT"
 ClassType="arm_judith_black" (or any npc you'd like.)
 
 4. Done!
+
+-----------------------------------------------
+**EDITING CUSTOM SHOPS** 
+WITHIN THE FOLDER -
+C:\ge_server\ge\server_xml export
+EDIT THE SHOPS AS FUNCTIONS WITHING DATATABLE_TEST_SHOP
+IF YOUR LOOKING FOR THE SHOP POINTERS TO DATATABLE FUNCTIONS
+LOOK WITHIN THE SCRIPT_EXPORT FOLDER NPCTERRA FOLDER WILL BE A LIST OF DIFFERENT SHOPS THERE. 
+YOU CAN FIND datatable_item_etc/datatable_itemcharge FOR REFERENCE TO CLASS ID FOR ITEMS 
+YOU WANT IN YOUR SHOP 
+
+
+as for the npc model 
+for example 
+in 'npcgen_xxx_basic'
+ClassType="Rico_letizia_m"
+=> this is NPC model type.
+
+where you can find this model info?
+datatable_npc
+
+<Class ClassID="114" ClassName="Rico_letizia_m" Bone="npc_com_letizia_set"
+
+SET="npc_com_letizia_set" SET1="npc_com_letizia_set1"
+--------------------------------------
 ---------
 Setup global connectivity from home connection 
 use Wan IP  on only Server1_IP
@@ -342,6 +492,124 @@ Create 5000 item number 238."
 //w total number of players
 //z check the number of players in zone (offer only?)
 /navcam on(off) camera hack
+
+
+
+
+
+-----------------------------------------
+****CLASS IDS FOR TERRA SERVER FILES**** 
+-----------------------------------------
+TO SUMMON ITEMS CAN USE THIS COMMAND FOR REFERENCE
+//item number quantity item creation Creates the item according to the input quantity "//item 238 5000
+Create 5000 item number 238."
+-----------------------------
+XML_EXPORT/DATATABLE_ITEM_ETC
+CLASS IDS FOR ITEMS
+BLESSINGS
+33 - 76009
+34 - 76010
+35 - 76011
+36 - 76012
+37 -  76013
+38 - 76014
+39 -  76015
+40 - 76016
+
+------------
+ENCHANT CHIPS
+
+MASTER - 24109
+
+HIGH MASTER - 24113
+
+
+
+GROWTH STONE ** - 75330 
+
+LUMIN 
+DAZZ OBSIDIAN - 77565
+DAZZ SPOD - 77561
+royal spod - Rylumin_Spodumene
+royl obsi - Rylumin_Obsidian
+
+brilliant lumin - 
+921496
+921497
+921498
+921499
+921500
+
+
+ALL CONSUME SUMMON STONE - SPINEL - BUFF ETC XML_EXPORT/DATATABLE_ITEM_CONSUME
+
+accessory
+----------------------- 
+*order /star messenger *
+earring + 10 - 27385
+neck - 27581
+belt - 27583
+glove - 27585
+boots - 27587
+-----------------
+
+SUMMON STONE- 
+ABYSS ARMA WEAPON - 27635
+
+---------------
+ itemcharge 
+  
+  era coin - 120051
+  
+ royal weapon summon stone - 43042
+ royal armor - 43043 
+ royal equipment package wep/armo/acc  - 43041 
+  
+  recruit char sumstone - 27506
+  premium char sumstone- 27507
+ master char card summ stone - 27508
+ high master card summ stone - 43000 
+ char card box of heaven 3 - 23553
+ -------------------------
+  various quest item 
+  -----------------------
+  
+  cast iron - 21602
+  mana stone -  21604
+  
+  --------
+  stance item
+  
+  cupiditas - 39095
+  castigo - 39082
+  
+
+
+other item
+
+karin vital potion - 40279
+
+starter package cash - 49860
+
+royal package cash - 49861
+
+event a token - 1590026 
+evnet b token - 1590027
+
+charlotte card -  22218 
+lama stance - 39063
+
+beginner Event only untradable - 43046
+Veteran pet box - 43045
+Expert pet box - 43044
+master pet box - 43101
+high master pet box - 44050
+grand master pet box - 610007
+star essence - 210060
+-----------------------------------------
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+*****************************************
+-----------------------------------------
 
   --------------
 **ADVANCE QUESTS**
@@ -604,3 +872,46 @@ For example, MD5 of 123456 is e10adc3949ba59abbe56e057f20f883e.
 8. Go to RESOURCE → Tables → dbo.LEVEL_PERMISSION_IP, fill 127.0.0.1 in PERMISSION_IP.
 9. You can log in and enjoy the game now!
 --------------------------------------------
+
+
+--------------------
+special client based guides
+---------------------
+EDITING UI.IPF 
+INSIDE FOLDER 
+\ui\uixml
+BLANKFRAME.XML CONTAINS THE MODEL FOR CHEATLIST 
+U CAN ADJUST THIS AND ADD BUTTONS ETC.
+YOU CAN UPDATE SERVERINFO VERSION @ VERSIONINFO.XML
+
+to change name of client. ex in top left corner in ies file 
+when changed to xml and prn file
+modify the file datatable_locale.xml 
+
+-------------------------------
+\
+chloe boss id 
+40450
+
+charlot boss id 
+10054 or 10055 
+
+
+ugly boss 
+56043
+
+-----------
+//lobby commands 
+
+chloe sky road 
+//lobby mcskyroadchloe 
+
+charlot mission 
+//lobby mcskyroad2
+
+orden original 
+//lobby mcskyroad
+
+
+montoro twister space time 
+//lobby mcmontoro2_HardKOR
