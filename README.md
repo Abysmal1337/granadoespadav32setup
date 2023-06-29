@@ -1,8 +1,9 @@
-# granadoespadav32setup
+#granadoespadav32setup
 granadoespadav32 private server setup
 Granado Espada v32.18.19 retail server files
 
-MY DISCORD IF YOU NEED HELP - Abysmal#0666
+MY DISCORD IF YOU NEED HELP - abysmal666
+GM DEV TEST SERVER DISCORD - https://discord.gg/PhWzSxtqMG
 
 ORIGINAL Video Showcasing the server files - https://www.youtube.com/watch?v=VHzrp2-Nfyc
 DISCORD GROUP - https://discord.gg/DbxUSpn6kD
@@ -61,6 +62,8 @@ and make a backup before you do that .
 step 1: resource db account_info class == 0
 
 THEN RUN SQLQUERY 25-26-27
+download here 
+https://drive.google.com/file/d/137gAGVxujCLktHdsKh43OqiCjDxeTFSB/view?usp=sharing
 ------------------------------------------------
 ________________________________________________
 
@@ -71,8 +74,46 @@ THEN JUST EXTRACT AND REPLACE THEM ORIGINAL SERVER GE FOLDER AND DOWNLOAD THE MA
 
 YOU CAN FIND A VIDEO GUIDE HERE! - https://www.youtube.com/watch?v=X8u8r2gNzSM
 
-------------------------------
+-------------------
+*MODIFY CUSTOM NPCS in rebo.. auch.coim*
+-------------------
+first know which shops can check in server_xml_export for datatable_test_shop
+datatable_customshop
+--------------------------------
+then if using terra files or most other private clients based in deu
+get client side ies> extract> convert all to xml prn all using getools v3 in ⁠ge-tools IN DEV DISCORD 
+__
+then search in deu folder make u sure its extract and converted as well
+look under 
+npcgen_xxx_basic
+replace xxx with reb/coim/auch 
+then u should see the shop name from server xml custom or test shop
+----------------------- 
+from here u can change npc find names of npc in xml_export 
+datatable_npc
+or rewrite the shops simply using class ids from
+datatable_item_etc
+---------------------------------
+once you are complete make sure to keep all prn files in the folder with the xml etc
+then get the ies python converter script
+put your files all into the folderinput
+and run the batch file
+it will convert into .ies files
+then use ge tools v3 to convert to ipf
+__
+finally import the ipf into your ge client 
+then enjoy!
 
+
+------------------------------
+changing client updateR background and exe icons.
+-------------------
+
+client updater requires one small change the background.jpg image with in the \release\res folder .
+for changing icons i can reccomend a good program gconvert
+download here - https://www.gdgsoft.com/download/gconvert.aspx
+
+------------------------------
 -------------------
 *adding characters * (IF DONT WANT TO ADD MANUALLY CHECK THE NEXT GUIDE EASY SETUP) -- 
 
@@ -915,3 +956,16 @@ orden original
 
 montoro twister space time 
 //lobby mcmontoro2_HardKOR
+
+
+first of darkness
+//lobby mcarmdark_Hard
+
+
+elemental trinity hard 
+//lobby mcabysstemple_Hard
+
+executor of hatred hard 
+//lobby mchate_h
+
+
