@@ -73,6 +73,20 @@ YOU CAN DOWNLOAD THE TERRA GE FILES ABOVE IN THE UPDATE DOWNLOADS .
 THEN JUST EXTRACT AND REPLACE THEM ORIGINAL SERVER GE FOLDER AND DOWNLOAD THE MAY 8TH 2023 CLIENT IVE SHARED TO START PLAYING LOCALLY.
 
 YOU CAN FIND A VIDEO GUIDE HERE! - https://www.youtube.com/watch?v=X8u8r2gNzSM
+-------------------
+RUNNING LOCAL OR ON PUBLIC SERVER GUIDE
+-------------------
+INSTALL SQL AND THE SERVER FILES. RUN 0DBC FROM V28 SERVER FILES SQL OR THERES A COPY IN DEV DISCORD.
+ ⁠download AND THEN CHANGE ALL IPS IN THE MACHINE DB TO YOUR SERVERS OR LAN.
+CHANGE THE IP INSIDE THE node release shortcut only to your server. leave the hub at 127.0.0.1 . 
+ *FOR WAN/SERVER HOSTERS* then make sure to turn off windows firewall. other wise players cant connect
+then to start the server as usual.
+run node/ hub and client release
+
+
+-------------------
+
+-------------------
 
 -------------------
 *MODIFY CUSTOM NPCS in rebo.. auch.coim*
