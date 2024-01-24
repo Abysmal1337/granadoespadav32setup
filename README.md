@@ -3,14 +3,14 @@ granadoespadav32 private server setup
 Granado Espada v32.18.19 retail server files
 
 MY DISCORD IF YOU NEED HELP - abysmal666
-GM DEV TEST SERVER DISCORD - https://discord.gg/PhWzSxtqMG
+GM DEV TEST SERVER DISCORD - https://discord.gg/JUPv3mwtdb
 
 ORIGINAL Video Showcasing the server files - https://www.youtube.com/watch?v=VHzrp2-Nfyc
-DISCORD GROUP - https://discord.gg/DbxUSpn6kD
+DISCORD GROUP - https://discord.gg/JUPv3mwtdb
 
 To start off this guide I want you to know anything is possible including building your own server with these files!
 if you need any help come join the v32 developer discord everyone can help eachother there and will have new guides and stuff regularly!
-DEVELOPER Discord LINK - https://discord.gg/zeYzb6kc
+DEVELOPER Discord LINK - https://discord.gg/JUPv3mwtdb
 
 ** DOWNLOADS **
 microsoft sql (if you dont have it yet) - https://www.microsoft.com/en-us/download/details.aspx?id=8109 
